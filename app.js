@@ -8,11 +8,13 @@ const i18n=new I18n({
     directory:path.join(__dirname,'translation'),
     defaultLocale:  'en'
 })
+// initialize
 app.use(i18n.init)
+
 app.get('/test',async (req,res)=>{
     res.send({Message:res.__('Message'),Home:res.__('Home')})
-
 })
+
 app.listen(8000,()=>{
     console.log("app is listiening on port 8000");
 })
